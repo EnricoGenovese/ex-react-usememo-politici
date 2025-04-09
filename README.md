@@ -19,3 +19,10 @@ Permetti all’utente di filtrare i risultati in base a nome o biografia (se il 
 Non usare useEffect per aggiornare l’array filtrato.
 
 Obiettivo: Migliorare le prestazioni evitando ricalcoli inutili quando il valore della ricerca non cambia.
+
+Milestone 3: Ottimizzare il rendering delle card con React.memo
+Attualmente, ogni volta che l’utente digita nella barra di ricerca, tutte le card vengono ri-renderizzate, anche quelle che non sono cambiate.
+Usa React.memo() per evitare il ri-render delle card quando le loro props non cambiano.
+Aggiungi un console.log() dentro il componente Card per verificare che venga renderizzato solo quando necessario.
+
+Obiettivo: Se la lista filtrata cambia, solo le nuove card devono essere renderizzate, mentre le altre rimangono in memoria senza essere ridisegnate.

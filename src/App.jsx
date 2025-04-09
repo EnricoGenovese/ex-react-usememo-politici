@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, memo } from 'react'
 import './App.css'
 
-const PoliticianCard = ({ name, image, country, position, years_in_office, biography }) => {
+const PoliticianCard = memo(({ name, image, country, position, years_in_office, biography }) => {
   console.log('Rendered Card', name)
   return (
     <div className='card'>
@@ -11,7 +11,7 @@ const PoliticianCard = ({ name, image, country, position, years_in_office, biogr
       <p>{biography}</p>
     </div>
   )
-}
+})
 
 
 function App() {
@@ -22,7 +22,6 @@ function App() {
   const loadPoliticians = async () => {
     const res = await fetch('https://boolean-spec-frontend.vercel.app/freetestapi/politicians');
     const data = await res.json();
-    console.log(data);
     setPoliticians(data);
   }
 
